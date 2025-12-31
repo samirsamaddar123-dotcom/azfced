@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year Mom & Dad</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #ff9a9e, #fad0c4, #fbc2eb);
+    color: white;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    position: relative;
+    z-index: 2;
+    padding: 40px 20px;
+}
+
+/* Headings */
+h1 {
+    font-size: 3em;
+    animation: glow 2s infinite alternate;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Card */
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 30px;
+    max-width: 750px;
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Text */
+p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+/* Heart */
+.heart {
+    font-size: 2.2em;
+    animation: beat 1s infinite;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    font-size: 1.1em;
+}
+
+/* Glow animation */
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 30px #ffeb3b; }
+}
+
+/* Heart beat */
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+/* Floral petals */
+.flower {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear infinite;
+    opacity: 0.9;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* Fireworks */
+.firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: transparent;
+    border-radius: 50%;
+    animation: explode 1.5s infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(15);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floral animation -->
+<script>
+const flowers = ["🌸","🌺","🌼","🌷","💐"];
+for (let i = 0; i < 30; i++) {
+    let f = document.createElement("div");
+    f.className = "flower";
+    f.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(f);
+}
+</script>
+
+<!-- Fireworks -->
+<script>
+setInterval(() => {
+    let fw = document.createElement("div");
+    fw.className = "firework";
+    fw.style.left = Math.random() * 100 + "vw";
+    fw.style.top = Math.random() * 100 + "vh";
+    fw.style.background = `hsl(${Math.random()*360},100%,50%)`;
+    document.body.appendChild(fw);
+    setTimeout(() => fw.remove(), 1500);
+}, 400);
+</script>
+
+<div class="container">
+    <h1>🎆 Happy New Year 🎆</h1>
+    <h2>Dear Mom & Dad</h2>
+
+    <div class="card">
+        <p>
+            My dearest Mom and Dad,<br><br>
+            On this New Year, I want you to know how deeply I love you.
+            You are my world, my strength, and my forever support.
+        </p>
+
+        <p>
+            Thank you for every sacrifice, every lesson,
+            and every moment of care and love you have given me.
+        </p>
+
+        <p>
+            May this New Year bring you happiness, good health,
+            peace of mind, and countless smiles.
+            May all your dreams and hopes come true.
+        </p>
+
+        <p>
+            I promise to always stay with you,
+            respect you, and make you proud in life.
+        </p>
+
+        <p class="heart">❤️❤️❤️</p>
+
+        <p>
+            Happy New Year, Mom & Dad!<br>
+            With endless love 💖
+        </p>
+    </div>
+
+    <footer>
+        — Your loving child, <b>Suvam</b> 🌟
+    </footer>
+</div>
+
+</body>
+</html>
